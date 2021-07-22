@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
+
+body {
+    font-family: 'Encode Sans SC', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #7C83FD;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1;
+    border-bottom: solid 1px;
+}
+
+header h1 {
+    text-align: center;
+}
+
+main {
+    position: relative;
+    top: 125px;
+}
+
+#add-book {
+    background-color: #96BAFF;
+    padding: 10px;
+    border-bottom: 1px solid;
+}
+
+#add-book input {
+    margin: 5px;
+    display: block;
+    width: 50%;
+}
+
+#add-book button {
+    position: relative;
+    left: 50%;
+}
+
+#unfinishedbooks, #finishedbooks {
+    width: 50%;
+    border-bottom: 1px solid;
+}
+
+#unfinishedbooks {
+    float: left;
+    background-color: #7DEDFF;
+}
+
+#finishedbooks {
+    float: right;
+    background-color: #88FFF7;
+}
+
+.book {
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}

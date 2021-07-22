@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title>Bookshelf A.S.17</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Rak buku</h1>
+            <input placeholder="Cari buku disini...">
+            <button id="search">Cari</button>
+        </header>
+        <main>
+            <div id="add-book">
+                <h2>Tambahkan Buku</h2>
+                <label for="judulbuku">Judul Buku</label>     
+                <input id="judulbuku" name="judulbuku" placeholder="Judul Buku disini..." required>
+                <label for="penulisbuku">Penulis Buku</label>
+                <input id="penulisbuku" name="penulisbuku" placeholder="Penulis buku disini..." required>
+                <label for="tahunbukurilis">Tahun Buku Rilis</label>
+                <input id="tahunbukurilis" name="tahunbukurilis" type="number" placeholder="Tahun buku dirilis disini..." required>
+                <input type="submit" value="Tambah buku" id="tambahbuku" onclick="addBook()">
+            </div>
+            <div id="unfinishedbooks">
+                <h2>Buku yang belum selesai dibaca</h2>
+                
+            </div>
+            <div id="finishedbooks">
+                <h2>Buku yang selesai dibaca</h2>
+                <div class="book">
+                    <h3>i forgot the book wth</h3>
+                    <p>Fiersa Besari</p>
+                    <p>20xx</p>
+                    <button class="unread">Belum selesai dibaca</button>
+                    <button class="delete">Hapus buku</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        <script src="scripts/datahandle.js"></script>
+        <script src="scripts/dom.js"></script>
+    </body>
+</html>
