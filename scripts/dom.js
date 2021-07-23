@@ -36,12 +36,15 @@ function addBook() {
     const bookWriter = document.getElementById("penulisbuku").value;
     const bookReleased = document.getElementById("tahunbukurilis").value;
     let bookComplete = false;
-    /*if (document.getElementById("dibacaatautidak").value) {
-        bookComplete = true;
+    if (bookTitle === "" || bookWriter === "" || bookReleased === "") {
+        alert("Semua input harus diisi!!")
     } else {
-        bookComplete = false;
-    }*/
-    makeBook(bookId, bookTitle, bookWriter, bookReleased, bookComplete)
+        makeBook(bookId, bookTitle, bookWriter, bookReleased, bookComplete)
+        document.getElementById("judulbuku").value = "";
+        document.getElementById("penulisbuku").value = "";
+        document.getElementById("tahunbukurilis").value = "";
+    }
+
 }
 
 function buttonMaker(classList) {

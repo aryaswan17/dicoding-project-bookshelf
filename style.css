@@ -48,3 +48,11 @@ header h1 {
     margin: 5px;
     padding: 5px;
 }
+
+.read, .unread, .delete {
+    border-radius: 10px;
+}
+
+.delete {
+    background-color: red;
+}
