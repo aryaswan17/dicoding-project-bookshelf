@@ -20,8 +20,7 @@ function addBook() {
     yearOfRelease.classList.add("book-year")
     const readButton = buttonMaker("read");
     const deleteButton = buttonMaker("delete");
-    const editButton = buttonMaker("edit")
-    container.append(titleOfBook, authorOfBook, yearOfRelease, readButton, deleteButton, editButton);
+    container.append(titleOfBook, authorOfBook, yearOfRelease, readButton, deleteButton, /*editButton*/);
     return unfinishedBooks.append(container);
 }
 
@@ -38,29 +37,11 @@ function buttonMaker(classList) {
         button.setAttribute("onclick", "deleteBook(this)")
     } else if (classList === "edit") {
         button.innerText = "Edit buku"
-        button.setAttribute("onclick", "editBook(this)")
+        button.setAttribute("onclick", "getDataToEditBook(this)")
     }
     return button;
 }
 
 function deleteBook(book) {
     return book.parentElement.remove();
-}
-//need to fix editbook
-function editBook(book) {
-    const oldBookTitle = book.parentElement.getElementsByClassName("book-title");
-    console.log(oldBookTitle)
-    const newBookTitle = prompt("Masukkan nama buku...");
-    const newBookAuthor = prompt("Masukkan penulis buku...");
-    const newBookYear = prompt("Masukkan tahun buku rilis...");
-
- 
-    const oldBookAuthor = book.getElementsByClassName("book-author");
-    const oldBookYear = book.getElementsByClassName("book-year");
-
-    console.log(newBookTitle)
-
-    oldBookTitle.innerText = newBookTitle;
-    oldBookAuthor.innerText = newBookAuthor;
-    oldBookYear.innerText = newBookYear;
 }

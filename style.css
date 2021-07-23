@@ -36,11 +36,6 @@ main {
     width: 50%;
 }
 
-#add-book button {
-    position: relative;
-    left: 50%;
-}
-
 #unfinishedbooks, #finishedbooks {
     width: 50%;
     border-bottom: 1px solid;
