@@ -8,8 +8,6 @@
     <body>
         <header>
             <h1>Rak buku</h1>
-            <input placeholder="Cari buku disini...">
-            <button id="search">Cari</button>
         </header>
         <main>
             <div id="add-book">
@@ -20,6 +18,8 @@
                 <input id="penulisbuku" name="penulisbuku" placeholder="Penulis buku disini..." required>
                 <label for="tahunbukurilis">Tahun Buku Rilis</label>
                 <input id="tahunbukurilis" name="tahunbukurilis" type="number" placeholder="Tahun buku dirilis disini..." required>
+                <label for="dibacaatautidak">Sudah dibaca?</label>
+                <input type="checkbox" name="dibacaatautidak" id="dibacaatautidak">
                 <input type="submit" value="Tambah buku" id="tambahbuku" onclick="addBook()">
             </div>
             <div id="unfinishedbooks">
@@ -28,13 +28,7 @@
             </div>
             <div id="finishedbooks">
                 <h2>Buku yang selesai dibaca</h2>
-                <div class="book">
-                    <h3>i forgot the book wth</h3>
-                    <p>Fiersa Besari</p>
-                    <p>20xx</p>
-                    <button class="unread">Belum selesai dibaca</button>
-                    <button class="delete">Hapus buku</button>
-                </div>
+
             </div>
         </main>
         <footer>

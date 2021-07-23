@@ -7,21 +7,12 @@ body {
 
 header {
     background-color: #7C83FD;
-    position: fixed;
-    top: 0;
-    width: 100%;
     padding: 10px;
-    z-index: 1;
     border-bottom: solid 1px;
 }
 
 header h1 {
     text-align: center;
-}
-
-main {
-    position: relative;
-    top: 125px;
 }
 
 #add-book {
