@@ -2,9 +2,12 @@ const addBookButton = document.getElementById("tambahbuku");
 const unfinishedBooks = document.getElementById("unfinishedbooks");
 const finishedBooks = document.getElementById("finishedbooks");
 
-function makeBook(title, author, year, isComplete) {
+function makeBook(id, title, author, year, isComplete) {
     const container = document.createElement("div");
     container.classList.add("book")
+    const bookId = document.createElement("sup");
+    bookId.innerText = id;
+    bookId.classList.add("id")
     const titleOfBook = document.createElement("h3");
     titleOfBook.innerText = title;
     titleOfBook.classList.add("book-title")
@@ -14,7 +17,7 @@ function makeBook(title, author, year, isComplete) {
     const yearOfRelease = document.createElement("p")
     yearOfRelease.innerText = year;
     yearOfRelease.classList.add("book-year")
-    container.append(titleOfBook, authorOfBook, yearOfRelease);
+    container.append(bookId, titleOfBook, authorOfBook, yearOfRelease);
     if (isComplete) {
         const unreadButton = buttonMaker("unread");
         const deleteButton = buttonMaker("delete");
@@ -37,7 +40,7 @@ function addBook() {
     if (bookTitle === "" || bookWriter === "" || bookReleased === "") {
         alert("Semua input harus diisi!!")
     } else {
-        makeBook(bookTitle, bookWriter, bookReleased, bookComplete)
+        makeBook(bookId, bookTitle, bookWriter, bookReleased, bookComplete)
         document.getElementById("judulbuku").value = "";
         document.getElementById("penulisbuku").value = "";
         document.getElementById("tahunbukurilis").value = "";
@@ -70,22 +73,28 @@ function buttonMaker(classList) {
 }
 
 function deleteBook(book) {
-    book.parentElement.remove();
+    if (confirm("Apakah anda yakin menghapus buku ini?")) {
+        book.parentElement.remove();
+        completelyDeleteBook(book)
+    }
 }
 
 function readBook(book) {
-    const titleOfBook = book.parentElement.children[0].innerText;
-    const authorOfBook = book.parentElement.children[1].innerText;
-    const yearOfRelease = book.parentElement.children[2].innerText;
-    makeBook(titleOfBook, authorOfBook, yearOfRelease, true);
+    const bookId = book.parentElement.children[0].innerText;
+    const titleOfBook = book.parentElement.children[1].innerText;
+    const authorOfBook = book.parentElement.children[2].innerText;
+    const yearOfRelease = book.parentElement.children[3].innerText;
+    makeBook(bookId, titleOfBook, authorOfBook, yearOfRelease, true);
     book.parentElement.remove();
     isThisBookRead(book)
 }
 
 function unreadBook(book) {
-    const titleOfBook = book.parentElement.children[0].innerText;
-    const authorOfBook = book.parentElement.children[1].innerText;
-    const yearOfRelease = book.parentElement.children[2].innerText;
-    makeBook(titleOfBook, authorOfBook, yearOfRelease, false);
+    const bookId = book.parentElement.children[0].innerText;
+    const titleOfBook = book.parentElement.children[1].innerText;
+    const authorOfBook = book.parentElement.children[2].innerText;
+    const yearOfRelease = book.parentElement.children[3].innerText;
+    makeBook(bookId, titleOfBook, authorOfBook, yearOfRelease, false);
     book.parentElement.remove();
+    isThisBookRead(book);
 }

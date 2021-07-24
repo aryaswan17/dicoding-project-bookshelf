@@ -56,3 +56,7 @@ header h1 {
 .delete {
     background-color: red;
 }
+
+.id {
+    display: none;
+}
