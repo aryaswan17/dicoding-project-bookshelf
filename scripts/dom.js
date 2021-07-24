@@ -98,3 +98,23 @@ function unreadBook(book) {
     book.parentElement.remove();
     isThisBookRead(book);
 }
+
+function openDisclaimer() {
+    document.getElementById("footer").style.bottom = 0;
+    document.getElementById("disclaimer").style.bottom = "-50px";
+}
+
+function closeDisclaimer() {
+    document.getElementById("footer").style.bottom = "-155px";
+    document.getElementById("disclaimer").style.bottom = 0;
+}
+
+function identityOpen() {
+    document.getElementById("identity").style.right = "0";
+    document.getElementById("identitybutton").style.right = "-100px";
+};
+
+function identityClose() {
+    document.getElementById("identity").style.right = "-600px";
+    document.getElementById("identitybutton").style.right = "0";
+;}

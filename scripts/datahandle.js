@@ -24,7 +24,7 @@ function displayBooks() {
         makeBook(books.id, books.title, books.author, books.year, books.isComplete);
     }
 }
-//need to figure out how to change isComplete property
+
 function isThisBookRead(book) {
     const bookId = book.parentElement.children[0].innerText;
     const savedBook = bookSearcher(bookId);

@@ -60,3 +60,50 @@ header h1 {
 .id {
     display: none;
 }
+
+#identity {
+    position: fixed;
+    height: 100%;
+    border: 3px solid;
+    text-align: center;
+    top: 0;
+    right: -600px;
+    background-color: whitesmoke;
+    z-index: 2;
+    transition: 1s;
+    overflow: scroll;
+}
+
+#identity img {
+    height: 200px;
+    border: 1px solid;
+}
+
+#identitybutton {
+    position: fixed;
+    right: 0;
+    transition: 1s;
+}
+
+#identity-close {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#disclaimer {
+    position: fixed;
+    left: 45%;
+    bottom: 0;
+    transition: 1s;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: -155px;
+    transition: 1s;
+    width: 100%;
+}

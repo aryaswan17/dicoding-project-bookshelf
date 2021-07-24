@@ -29,8 +29,25 @@
 
             </div>
         </main>
-        <footer>
-
+        <aside id="identity">
+            <button id="identity-close" onclick="identityClose()">Tutup Tab</button><br>
+            <sub>Website ini dibuat oleh:</sub>
+            <figure>
+                <img src="Arya_Suwandika.jpg">
+                <figcaption><h2><a href="https://www.dicoding.com/users/aryaswan17">Arya Suwandika</a></h2></figcaption>
+                <q>A wannabe Professional Website Developer.</q><br>
+                <sup>Dengan lebih banyak cinta, dan bahkan lebih banyak kesengsaraan lagi.</sup>
+            </figure>
+            <p>Username: aryaswan17</p>
+            <p>Email: <a href="mailto:aryaswan17@gmail.com">aryaswan17@gmail.com</a></p>
+            <em><p>Baru saja datang dari website saya yang lain? <a target="blank_" href="https://aryaswan17.github.io/">Kembali lagi.</a></p></em>
+        </aside>
+        <button id="identitybutton" onclick="identityOpen()">Tab Identitas</button>
+        <button id="disclaimer" onclick="openDisclaimer()">Disclaimer</button>
+        <footer id="footer">
+            <button onclick="closeDisclaimer()">Tutup</button>
+            <p>Website ini dibuat untuk "Submission Aplikasi Pengelolaan Data Menggunakan DOM dan Web Storage" di <a href="https://www.dicoding.com">Dicoding</a>.</p>
+            <h2 style="color: red;">Stay determined.</h2>
         </footer>
         <script src="scripts/dom.js"></script>
         <script src="scripts/datahandle.js"></script>
