@@ -41,9 +41,7 @@ function addBook() {
         alert("Semua input harus diisi!!")
     } else {
         makeBook(bookId, bookTitle, bookWriter, bookReleased, bookComplete)
-        document.getElementById("judulbuku").value = "";
-        document.getElementById("penulisbuku").value = "";
-        document.getElementById("tahunbukurilis").value = "";
+        emptyInput()
         const bookData = {
             id: bookId,
             title: bookTitle,
@@ -55,6 +53,11 @@ function addBook() {
     }
 }
 
+function emptyInput() {
+        document.getElementById("judulbuku").value = "";
+        document.getElementById("penulisbuku").value = "";
+        document.getElementById("tahunbukurilis").value = ""; 
+}
 
 function buttonMaker(classList) {
     const button = document.createElement("button")
@@ -99,6 +102,8 @@ function unreadBook(book) {
     isThisBookRead(book);
 }
 
+document.addEventListener("load", emptyInput())
+
 function openDisclaimer() {
     document.getElementById("footer").style.bottom = 0;
     document.getElementById("disclaimer").style.bottom = "-50px";
@@ -117,4 +122,16 @@ function identityOpen() {
 function identityClose() {
     document.getElementById("identity").style.right = "-600px";
     document.getElementById("identitybutton").style.right = "0";
-;}
+};
+
+function helpTab() {
+    document.getElementById("helpTab").style.opacity = "1";
+    document.getElementById("helpTab").style.top = "5%";
+    document.getElementById("help").style.display = "none";
+}
+
+function noHelpTab() {
+    document.getElementById("helpTab").style.opacity = "0";
+    document.getElementById("helpTab").style.top = "-65%";
+    document.getElementById("help").style.display = "initial";
+}

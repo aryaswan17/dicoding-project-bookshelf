@@ -107,3 +107,23 @@ footer {
     transition: 1s;
     width: 100%;
 }
+
+#help {
+    border-radius: 50%;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+
+#helpTab {
+    position: fixed;
+    transition: 1s;
+    opacity: 0;
+    top: -65%;
+    left: 2%;
+    background-color: white;
+    border: solid 2px;
+    box-shadow: 2px 2px 5px black;
+    padding: 5px;
+    z-index: 2;
+}
