@@ -51,3 +51,11 @@ function bookSearcher(bookId) {
         }
     }
 }
+
+function editBookData(bookId, newTitle, newAuthor, newYear) {
+    const book = bookSearcher(bookId);
+    book.title = newTitle;
+    book.author = newAuthor;
+    book.year = newYear;
+    localStorage.setItem(storageKey, JSON.stringify(storageItem))
+}
