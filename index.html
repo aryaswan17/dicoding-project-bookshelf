@@ -28,6 +28,17 @@
                 <h2>Buku yang selesai dibaca</h2>
 
             </div>
+            <div id="editTab">
+                <h2>Edit buku</h2>
+                <label for="judulbukubaru">Judul Buku baru</label>     
+                <input id="judulbukubaru" name="judulbukubaru" placeholder="Judul Buku baru disini..." required>
+                <label for="penulisbukubaru">Penulis Buku baru</label>
+                <input id="penulisbukubaru" name="penulisbukubaru" placeholder="Penulis buku baru disini..." required>
+                <label for="tahunbukurilisbaru">Tahun Buku Rilis baru</label>
+                <input id="tahunbukurilisbaru" name="tahunbukurilisbaru" type="number" placeholder="Tahun buku dirilis baru disini..." required>
+                <input type="submit" value="Edit buku" id="editbuku">
+                <button onclick="clearEditInput()">Batal</button>
+            </div>
         </main>
         <div id="helpTab">
             <h2>Selamat Datang!</h2>
@@ -38,7 +49,7 @@
             <p>Fitur dalam rencana:</p>
             <ul>
                 <li>Kolom pencarian buku</li>
-                <li>Edit data buku</li>
+                <s><li>Edit data buku</li></s>
             </ul>
             <button onclick="noHelpTab()">Tutup</button>
         </div>
