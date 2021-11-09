@@ -151,7 +151,7 @@ function helpTab() {
 
 function noHelpTab() {
     document.getElementById("helpTab").style.opacity = "0";
-    document.getElementById("helpTab").style.top = "-65%";
+    document.getElementById("helpTab").style.top = "-100%";
     document.getElementById("help").style.display = "initial";
 }
 

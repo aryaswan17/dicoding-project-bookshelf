@@ -59,3 +59,9 @@ function editBookData(bookId, newTitle, newAuthor, newYear) {
     book.year = newYear;
     localStorage.setItem(storageKey, JSON.stringify(storageItem))
 }
+
+const searchbar = document.getElementById("searchbar");
+searchbar.addEventListener("change", function(){
+    console.log("input has changed");
+    console.log(searchbar.value);
+});
