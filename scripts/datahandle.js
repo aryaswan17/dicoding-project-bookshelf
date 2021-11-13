@@ -52,6 +52,18 @@ function bookSearcher(bookId) {
     }
 }
 
+function bookSearcherByTitle(input) {
+    let bookList = [];
+    let actualinput = new RegExp(input, 'gi');
+    console.log(actualinput);
+    for (let book of storageItem) {
+        if (actualinput.test(book.title)) {
+            bookList.push(book);
+        }
+    }
+    return bookList;
+}
+
 function editBookData(bookId, newTitle, newAuthor, newYear) {
     const book = bookSearcher(bookId);
     book.title = newTitle;
@@ -62,6 +74,5 @@ function editBookData(bookId, newTitle, newAuthor, newYear) {
 
 const searchbar = document.getElementById("searchbar");
 searchbar.addEventListener("change", function(){
-    console.log("input has changed");
-    console.log(searchbar.value);
+    console.log(bookSearcherByTitle(searchbar.value))
 });
