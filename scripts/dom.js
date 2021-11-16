@@ -2,9 +2,13 @@ const addBookButton = document.getElementById("tambahbuku");
 const unfinishedBooks = document.getElementById("unfinishedbooks");
 const finishedBooks = document.getElementById("finishedbooks");
 
-function makeBook(id, title, author, year, isComplete) {
+function makeBook(id, title, author, year, isComplete, resultOrNot) {
     const container = document.createElement("div");
-    container.classList.add("book")
+    if (resultOrNot) {
+        container.classList.add("bookresult")
+    } else {
+        container.classList.add("book")
+    }
     const bookId = document.createElement("sup");
     bookId.innerText = id;
     bookId.classList.add("id")

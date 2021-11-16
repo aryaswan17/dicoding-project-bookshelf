@@ -42,7 +42,7 @@ header h1 {
     background-color: #88FFF7;
 }
 
-.book {
+.book, .bookresult {
     border: 1px solid;
     border-radius: 5px;
     margin: 5px;

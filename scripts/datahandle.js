@@ -21,7 +21,7 @@ document.addEventListener("load", displayBooks())
 
 function displayBooks() {
     for (const books of storageItem) {
-        makeBook(books.id, books.title, books.author, books.year, books.isComplete);
+        makeBook(books.id, books.title, books.author, books.year, books.isComplete, false);
     }
 }
 
@@ -54,13 +54,14 @@ function bookSearcher(bookId) {
 
 function bookSearcherByTitle(input) {
     let bookList = [];
-    let actualinput = new RegExp(input, 'gi');
+    let actualinput = new RegExp("^" + input, 'gi');
     console.log(actualinput);
     for (let book of storageItem) {
         if (actualinput.test(book.title)) {
             bookList.push(book);
         }
     }
+    console.log(bookList);
     return bookList;
 }
 
@@ -74,5 +75,23 @@ function editBookData(bookId, newTitle, newAuthor, newYear) {
 
 const searchbar = document.getElementById("searchbar");
 searchbar.addEventListener("change", function(){
-    console.log(bookSearcherByTitle(searchbar.value))
+    let searchresult = bookSearcherByTitle(searchbar.value);
+    console.log(searchresult);
+/*    const oldbooks = document.getElementsByClassName("book");
+    const resultbooks = document.getElementsByClassName("bookresult")
+    if (searchresult == []) {
+        for (let i = 0; i < oldbooks.length; i++) {
+            oldbooks[i].style.display = "initial";
+        }
+        for (let i = 0; i < resultbooks.length; i++) {
+            resultbooks[i].style.display = "none";
+        }
+    } else {
+        for (let i = 0; i < oldbooks.length; i++) {
+            oldbooks[i].style.display = "none";
+        }
+        for (const books in searchresult) {
+            makeBook(books.id, books.title, books.author, books.year, books.isComplete, true);
+        }
+    }*/
 });
