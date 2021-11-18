@@ -53,6 +53,10 @@ function bookSearcher(bookId) {
 }
 
 function bookSearcherByTitle(input) {
+    if (input == "") {
+        console.log(input)
+        return;
+    }
     let bookList = [];
     let actualinput = new RegExp("^" + input, 'gi');
     console.log(actualinput);
@@ -61,7 +65,6 @@ function bookSearcherByTitle(input) {
             bookList.push(book);
         }
     }
-    console.log(bookList);
     return bookList;
 }
 
@@ -77,21 +80,23 @@ const searchbar = document.getElementById("searchbar");
 searchbar.addEventListener("change", function(){
     let searchresult = bookSearcherByTitle(searchbar.value);
     console.log(searchresult);
-/*    const oldbooks = document.getElementsByClassName("book");
+    const oldbooks = document.getElementsByClassName("book");
     const resultbooks = document.getElementsByClassName("bookresult")
-    if (searchresult == []) {
+    if (searchresult === undefined) {
         for (let i = 0; i < oldbooks.length; i++) {
-            oldbooks[i].style.display = "initial";
+            oldbooks[i].attributes.removeNamedItem("style");
         }
         for (let i = 0; i < resultbooks.length; i++) {
-            resultbooks[i].style.display = "none";
+            resultbooks[i].parentNode.removeChild(resultbooks[i]);
         }
     } else {
         for (let i = 0; i < oldbooks.length; i++) {
             oldbooks[i].style.display = "none";
         }
         for (const books in searchresult) {
+            console.log(books);
+            console.log(searchresult);
             makeBook(books.id, books.title, books.author, books.year, books.isComplete, true);
         }
-    }*/
+    }
 });

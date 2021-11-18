@@ -4,11 +4,6 @@ const finishedBooks = document.getElementById("finishedbooks");
 
 function makeBook(id, title, author, year, isComplete, resultOrNot) {
     const container = document.createElement("div");
-    if (resultOrNot) {
-        container.classList.add("bookresult")
-    } else {
-        container.classList.add("book")
-    }
     const bookId = document.createElement("sup");
     bookId.innerText = id;
     bookId.classList.add("id")
@@ -22,6 +17,11 @@ function makeBook(id, title, author, year, isComplete, resultOrNot) {
     yearOfRelease.innerText = year;
     yearOfRelease.classList.add("book-year")
     container.append(bookId, titleOfBook, authorOfBook, yearOfRelease);
+    if (resultOrNot) {
+        container.classList.add("bookresult")
+    } else {
+        container.classList.add("book")
+    }
     if (isComplete) {
         container.append(buttonMaker("unread"), buttonMaker("delete"), buttonMaker("edit"));
         return finishedBooks.append(container);
@@ -104,8 +104,11 @@ function editBook(book) {
     document.getElementById("editTab").style.display = "initial";
     const bookId = book.parentElement.children[0].innerText;
     const oldBookTitle = book.parentElement.children[1];
+    document.getElementById("judulbukubaru").value = oldBookTitle.innerText;
     const oldBookAuthor = book.parentElement.children[2];
+    document.getElementById("penulisbukubaru").value = oldBookAuthor.innerText;
     const oldBookYear = book.parentElement.children[3];
+    document.getElementById("tahunbukurilisbaru").value = oldBookYear.innerText;
     const confirmEditButton = document.getElementById("editbuku");
     confirmEditButton.addEventListener("click", function() {
         const newBookTitle = document.getElementById("judulbukubaru").value;
