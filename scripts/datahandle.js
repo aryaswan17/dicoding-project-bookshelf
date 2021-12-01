@@ -54,7 +54,6 @@ function bookSearcher(bookId) {
 
 function bookSearcherByTitle(input) {
     if (input == "") {
-        console.log(input)
         return;
     }
     let bookList = [];
@@ -93,9 +92,7 @@ searchbar.addEventListener("change", function(){
         for (let i = 0; i < oldbooks.length; i++) {
             oldbooks[i].style.display = "none";
         }
-        for (const books in searchresult) {
-            console.log(books);
-            console.log(searchresult);
+        for (const books of searchresult) {
             makeBook(books.id, books.title, books.author, books.year, books.isComplete, true);
         }
     }
