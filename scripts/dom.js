@@ -123,38 +123,6 @@ function editBook(book) {
 document.addEventListener("load", emptyInput())
 document.addEventListener("load", clearEditInput())
 
-function openDisclaimer() {
-    document.getElementById("footer").style.bottom = 0;
-    document.getElementById("disclaimer").style.bottom = "-50px";
-}
-
-function closeDisclaimer() {
-    document.getElementById("footer").style.bottom = "-155px";
-    document.getElementById("disclaimer").style.bottom = 0;
-}
-
-function identityOpen() {
-    document.getElementById("identity").style.right = "0";
-    document.getElementById("identitybutton").style.right = "-100px";
-};
-
-function identityClose() {
-    document.getElementById("identity").style.right = "-600px";
-    document.getElementById("identitybutton").style.right = "0";
-};
-
-function helpTab() {
-    document.getElementById("helpTab").style.opacity = "1";
-    document.getElementById("helpTab").style.top = "5%";
-    document.getElementById("help").style.display = "none";
-}
-
-function noHelpTab() {
-    document.getElementById("helpTab").style.opacity = "0";
-    document.getElementById("helpTab").style.top = "-65%";
-    document.getElementById("help").style.display = "initial";
-}
-
 function clearEditInput() {
     document.getElementById("editTab").style.display = "none";
     document.getElementById("judulbukubaru").value = "";
