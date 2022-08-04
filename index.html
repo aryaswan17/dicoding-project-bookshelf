@@ -19,7 +19,7 @@
                 <input id="penulisbuku" name="penulisbuku" placeholder="Penulis buku disini..." required>
                 <label for="tahunbukurilis">Tahun Buku Rilis</label>
                 <input id="tahunbukurilis" name="tahunbukurilis" type="number" placeholder="Tahun buku dirilis disini..." required>
-                <input type="submit" value="Tambah buku" id="tambahbuku" onclick="addBook()">
+                <button type="button" class="btn btn-secondary" id="tambahbuku" onclick="addBook()">Tambah Buku</button>
             </div>
             <div id="unfinishedbooks">
                 <h2>Buku yang belum selesai dibaca</h2>
@@ -38,7 +38,7 @@
                 <label for="tahunbukurilisbaru">Tahun Buku Rilis baru</label>
                 <input id="tahunbukurilisbaru" name="tahunbukurilisbaru" type="number" placeholder="Tahun buku dirilis baru disini..." required>
                 <input type="submit" value="Edit buku" id="editbuku">
-                <button onclick="clearEditInput()">Batal</button>
+                <button class="btn btn-warning" onclick="clearEditInput()">Batal</button>
             </div>
         </main>
         <script src="scripts/dom.js"></script>

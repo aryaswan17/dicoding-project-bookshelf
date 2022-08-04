@@ -52,10 +52,6 @@ header h1 {
     border-radius: 10px;
 }
 
-.delete {
-    background-color: red;
-}
-
 #editTab {
     border: 1px solid;
     background-color: #96BAFF;

@@ -61,15 +61,23 @@ function buttonMaker(classList) {
     if (classList === "read") {
         button.innerText = "Sudah selesai dibaca"
         button.setAttribute("onclick", "readOrNot(this)")
+        button.classList.add("btn")
+        button.classList.add("btn-primary")
     } else if (classList === "unread") {
         button.innerText = "Belum selesai dibaca"
         button.setAttribute("onclick", "readOrNot(this)")
+        button.classList.add("btn")
+        button.classList.add("btn-outline-primary")
     } else if (classList === "delete") {
         button.innerText = "Hapus buku"
         button.setAttribute("onclick", "deleteBook(this)")
+        button.classList.add("btn")
+        button.classList.add("btn-danger")
     } else if (classList === "edit") {
         button.innerText = "Edit Buku"
         button.setAttribute("onclick", "editBook(this)")
+        button.classList.add("btn")
+        button.classList.add("btn-warning")
     }
     return button;
 }
