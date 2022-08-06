@@ -78,6 +78,8 @@ function buttonMaker(classList) {
         button.setAttribute("onclick", "editBook(this)")
         button.classList.add("btn")
         button.classList.add("btn-warning")
+        button.setAttribute("data-bs-toggle", "modal")
+        button.setAttribute("data-bs-target", "#editTab")
     }
     return button;
 }

@@ -29,17 +29,7 @@
                 <h2>Buku yang selesai dibaca</h2>
 
             </div>
-            <div id="editTab">
-                <h2>Edit buku</h2>
-                <label for="judulbukubaru">Judul Buku baru</label>     
-                <input id="judulbukubaru" name="judulbukubaru" placeholder="Judul Buku baru disini..." required>
-                <label for="penulisbukubaru">Penulis Buku baru</label>
-                <input id="penulisbukubaru" name="penulisbukubaru" placeholder="Penulis buku baru disini..." required>
-                <label for="tahunbukurilisbaru">Tahun Buku Rilis baru</label>
-                <input id="tahunbukurilisbaru" name="tahunbukurilisbaru" type="number" placeholder="Tahun buku dirilis baru disini..." required>
-                <input class="btn btn-success" type="submit" value="Edit buku" id="editbuku">
-                <button class="btn btn-warning" onclick="clearEditInput()">Batal</button>
-            </div>
+            <div class="modal fade" id="edit"
         </main>
         <script src="scripts/dom.js"></script>
         <script src="scripts/datahandle.js"></script>
