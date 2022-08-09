@@ -52,20 +52,6 @@ header h1 {
     border-radius: 10px;
 }
 
-/*#editTab {
-    border: 1px solid;
-    background-color: #96BAFF;
-    padding: 10px;
-    position: fixed;
-    display: none;
-    left: 1%;
-    top: 16%;
-    box-shadow: 2px 2px 5px black;
-    padding: 5px;
-    width: 98%;
-    z-index: 2;
-}*/
-
 .id {
     display: none;
 }
