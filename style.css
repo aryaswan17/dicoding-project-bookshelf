@@ -23,12 +23,16 @@ header h1 {
 #add-book input, #editTab input {
     margin: 5px;
     display: block;
-    width: 50%;
+}
+
+#add-book input {
+    width: 50vw;
 }
 
 #unfinishedbooks, #finishedbooks {
     width: 50%;
     border-bottom: 1px solid;
+    height: 100vh;
 }
 
 #unfinishedbooks {
@@ -48,10 +52,15 @@ header h1 {
     padding: 5px;
 }
 
-.read, .unread, .delete, .edit{
+.read, .unread, .delete, .edit {
     border-radius: 10px;
+    margin: 5px;
 }
 
 .id {
     display: none;
+}
+
+.bookListTitle {
+    margin: 1rem;
 }

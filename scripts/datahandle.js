@@ -1,9 +1,10 @@
 const storageKey = "books";
 let storageItem = [];
 const languageKey = "language";
-let languageSetting = "en";
-localStorage.setItem(languageKey, languageSetting);
-
+let languageSetting = navigator.language;
+if (localStorage.getItem(languageKey) === null) {
+    localStorage.setItem(languageKey, languageSetting);
+}
 
 function makeData(data) {
     storageItem.push(data)
