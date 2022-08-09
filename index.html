@@ -37,11 +37,16 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                         </div>
                         <div class="modal-body">
-
+                            <label for="judulbukubaru">Judul Buku baru</label>     
+                            <input id="judulbukubaru" name="judulbukubaru" placeholder="Judul Buku baru disini..." required>
+                            <label for="penulisbukubaru">Penulis Buku baru</label>
+                            <input id="penulisbukubaru" name="penulisbukubaru" placeholder="Penulis buku baru disini..." required>
+                            <label for="tahunbukurilisbaru">Tahun Buku Rilis baru</label>
+                            <input id="tahunbukurilisbaru" name="tahunbukurilisbaru" type="number" placeholder="Tahun buku dirilis baru disini..." required>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Batal</button>
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="clearEditInput()">Batal</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="editBook(this)">Edit</button>
                         </div>
                     </div>
                 </div>

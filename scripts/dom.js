@@ -107,7 +107,6 @@ function readOrNot(book) {
 }
 
 function editBook(book) {
-    document.getElementById("editTab").style.display = "initial";
     const bookId = book.parentElement.children[0].innerText;
     const oldBookTitle = book.parentElement.children[1];
     const oldBookAuthor = book.parentElement.children[2];
@@ -134,7 +133,6 @@ document.addEventListener("load", emptyInput())
 document.addEventListener("load", clearEditInput())
 
 function clearEditInput() {
-    document.getElementById("editTab").style.display = "none";
     document.getElementById("judulbukubaru").value = "";
     document.getElementById("penulisbukubaru").value = "";
     document.getElementById("tahunbukurilisbaru").value = ""; 
