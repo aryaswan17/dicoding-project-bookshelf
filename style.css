@@ -64,3 +64,8 @@ header h1 {
 .bookListTitle {
     margin: 1rem;
 }
+
+.langToggle {
+    position: absolute;
+    right: 5%;
+}
