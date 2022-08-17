@@ -58,37 +58,76 @@ function emptyInput() {
 function buttonMaker(classList) {
     const button = document.createElement("button")
     button.classList.add(classList);
-    if (classList === "read") {
-        button.innerText = "Sudah selesai dibaca"
-        button.setAttribute("onclick", "readOrNot(this)")
-        button.classList.add("btn")
-        button.classList.add("btn-primary")
-    } else if (classList === "unread") {
-        button.innerText = "Belum selesai dibaca"
-        button.setAttribute("onclick", "readOrNot(this)")
-        button.classList.add("btn")
-        button.classList.add("btn-outline-primary")
-    } else if (classList === "delete") {
-        button.innerText = "Hapus buku"
-        button.setAttribute("onclick", "deleteBook(this)")
-        button.classList.add("btn")
-        button.classList.add("btn-danger")
-    } else if (classList === "edit") {
-        button.innerText = "Edit Buku"
-        button.setAttribute("onclick", "editBook(this)")
-        button.classList.add("btn")
-        button.classList.add("btn-warning")
-        button.setAttribute("data-bs-toggle", "modal")
-        button.setAttribute("data-bs-target", "#editTab")
+    switch (localStorage.getItem(languageKey)) {
+        case "id":
+            if (classList === "read") {
+                button.innerText = "Sudah selesai dibaca"
+                button.setAttribute("onclick", "readOrNot(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-primary")
+            } else if (classList === "unread") {
+                button.innerText = "Belum selesai dibaca"
+                button.setAttribute("onclick", "readOrNot(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-outline-primary")
+            } else if (classList === "delete") {
+                button.innerText = "Hapus buku"
+                button.setAttribute("onclick", "deleteBook(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-danger")
+            } else if (classList === "edit") {
+                button.innerText = "Edit buku"
+                button.setAttribute("onclick", "editBook(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-warning")
+                button.setAttribute("data-bs-toggle", "modal")
+                button.setAttribute("data-bs-target", "#editTab")
+            }
+        break;
+        default: 
+            if (classList === "read") {
+                button.innerText = "Have been read"
+                button.setAttribute("onclick", "readOrNot(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-primary")
+            } else if (classList === "unread") {
+                button.innerText = "Have not been read"
+                button.setAttribute("onclick", "readOrNot(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-outline-primary")
+            } else if (classList === "delete") {
+                button.innerText = "Delete book"
+                button.setAttribute("onclick", "deleteBook(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-danger")
+            } else if (classList === "edit") {
+                button.innerText = "Edit book"
+                button.setAttribute("onclick", "editBook(this)")
+                button.classList.add("btn")
+                button.classList.add("btn-warning")
+                button.setAttribute("data-bs-toggle", "modal")
+                button.setAttribute("data-bs-target", "#editTab")
+            }
     }
+
     return button;
 }
 
 function deleteBook(book) {
-    if (confirm("Apakah anda yakin menghapus buku ini?")) {
-        book.parentElement.remove();
-        completelyDeleteBook(book)
+    switch (localStorage.getItem(languageKey)) {
+        case "id":
+            if (confirm("Apakah anda yakin menghapus buku ini?")) {
+                book.parentElement.remove();
+                completelyDeleteBook(book)
+            }
+        break;
+        default:
+            if (confirm("Are you sure you want to delete this book?")) {
+                book.parentElement.remove();
+                completelyDeleteBook(book)
+            }
     }
+
 }
 
 function readOrNot(book) {

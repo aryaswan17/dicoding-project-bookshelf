@@ -32,7 +32,6 @@ header h1 {
 #unfinishedbooks, #finishedbooks {
     width: 50%;
     border-bottom: 1px solid;
-    height: 100vh;
 }
 
 #unfinishedbooks {

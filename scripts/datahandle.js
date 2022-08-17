@@ -6,6 +6,28 @@ if (localStorage.getItem(languageKey) === null) {
     localStorage.setItem(languageKey, languageSetting);
 }
 
+function loadLanguage() {
+    switch (localStorage.getItem(languageKey)) {
+        case "id":
+            window.location.replace("/lang/id.html")
+            break;
+        default:
+            window.location.replace("/lang/en.html");
+    }
+}
+
+const switcher = document.getElementById("switcher");
+
+switcher.addEventListener("click", languageSwitch);
+
+function languageSwitch() {
+    if (localStorage.getItem(languageKey) == 'id') {
+        localStorage.setItem(languageKey, "en-US")
+    } else {
+        localStorage.setItem(languageKey, 'id')
+    }
+}
+
 function makeData(data) {
     storageItem.push(data)
     const JSONData = JSON.stringify(storageItem);
