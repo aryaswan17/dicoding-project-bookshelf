@@ -155,16 +155,17 @@ function editBook(book) {
         const newBookTitle = document.getElementById("judulbukubaru").value;
         const newBookAuthor = document.getElementById("penulisbukubaru").value;
         const newBookYear = document.getElementById("tahunbukurilisbaru").value;
-        if (newBookTitle === "" || newBookAuthor === "" || newBookYear === "") {
+        if (newBookTitle == "" || newBookAuthor == "" || newBookYear == "") {
             alert("Semua input harus diisi!!")
+            return;
         } else {
             oldBookTitle.innerText = newBookTitle;
             oldBookAuthor.innerText = newBookAuthor;
             oldBookYear.innerText = newBookYear;
             editBookData(bookId, newBookTitle, newBookAuthor, newBookYear)
             clearEditInput()
+            return;
         }
-
     })
 }
 
