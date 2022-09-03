@@ -157,6 +157,7 @@ function editBook(book) {
         const newBookYear = document.getElementById("tahunbukurilisbaru").value;
         if (newBookTitle == "" || newBookAuthor == "" || newBookYear == "") {
             alert("Semua input harus diisi!!")
+            bookId = ""
             return;
         } else {
             oldBookTitle.innerText = newBookTitle;
@@ -164,6 +165,7 @@ function editBook(book) {
             oldBookYear.innerText = newBookYear;
             editBookData(bookId, newBookTitle, newBookAuthor, newBookYear)
             clearEditInput()
+            bookId = ""
             return;
         }
     })
