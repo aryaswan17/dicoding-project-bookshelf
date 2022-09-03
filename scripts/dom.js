@@ -102,7 +102,7 @@ function buttonMaker(classList) {
                 button.classList.add("btn-danger")
             } else if (classList === "edit") {
                 button.innerText = "Edit book"
-                button.setAttribute("onclick", "editBook(this)")
+                button.setAttribute("onclick", "editBook(this.parentElement.children[0].innerText, this.parentElement.children[1], this.parentElement.children[2], this.parentElement.children[3])")
                 button.classList.add("btn")
                 button.classList.add("btn-warning")
                 button.setAttribute("data-bs-toggle", "modal")
@@ -145,11 +145,11 @@ function readOrNot(book) {
     isThisBookRead(book)
 }
 
-function editBook(book) {
-    const bookId = book.parentElement.children[0].innerText;
-    const oldBookTitle = book.parentElement.children[1];
-    const oldBookAuthor = book.parentElement.children[2];
-    const oldBookYear = book.parentElement.children[3];
+function editBook(id, title, author, year) {
+    //const bookId = book.parentElement.children[0].innerText;
+    //const oldBookTitle = book.parentElement.children[1];
+    //const oldBookAuthor = book.parentElement.children[2];
+    //const oldBookYear = book.parentElement.children[3];
     const confirmEditButton = document.getElementById("editbuku");
     confirmEditButton.addEventListener("click", function() {
         const newBookTitle = document.getElementById("judulbukubaru").value;
@@ -157,15 +157,14 @@ function editBook(book) {
         const newBookYear = document.getElementById("tahunbukurilisbaru").value;
         if (newBookTitle == "" || newBookAuthor == "" || newBookYear == "") {
             alert("Semua input harus diisi!!")
-            bookId = ""
+            clearEditInput()
             return;
         } else {
-            oldBookTitle.innerText = newBookTitle;
-            oldBookAuthor.innerText = newBookAuthor;
-            oldBookYear.innerText = newBookYear;
-            editBookData(bookId, newBookTitle, newBookAuthor, newBookYear)
+            title.innerText = newBookTitle;
+            author.innerText = newBookAuthor;
+            year.innerText = newBookYear;
+            editBookData(id, newBookTitle, newBookAuthor, newBookYear)
             clearEditInput()
-            bookId = ""
             return;
         }
     })
