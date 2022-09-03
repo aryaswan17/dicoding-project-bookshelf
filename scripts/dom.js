@@ -146,10 +146,10 @@ function readOrNot(book) {
 }
 
 function editBook(id, title, author, year) {
-    //const bookId = book.parentElement.children[0].innerText;
-    //const oldBookTitle = book.parentElement.children[1];
-    //const oldBookAuthor = book.parentElement.children[2];
-    //const oldBookYear = book.parentElement.children[3];
+    const bookId = id;
+    const oldBookTitle = title;
+    const oldBookAuthor = author;
+    const oldBookYear = year;
     const confirmEditButton = document.getElementById("editbuku");
     confirmEditButton.addEventListener("click", function() {
         const newBookTitle = document.getElementById("judulbukubaru").value;
@@ -160,10 +160,10 @@ function editBook(id, title, author, year) {
             clearEditInput()
             return;
         } else {
-            title.innerText = newBookTitle;
-            author.innerText = newBookAuthor;
-            year.innerText = newBookYear;
-            editBookData(id, newBookTitle, newBookAuthor, newBookYear)
+            oldBookTitle.innerText = newBookTitle;
+            oldBookAuthor.innerText = newBookAuthor;
+            oldBookYear.innerText = newBookYear;
+            editBookData(bookId, newBookTitle, newBookAuthor, newBookYear)
             clearEditInput()
             return;
         }
