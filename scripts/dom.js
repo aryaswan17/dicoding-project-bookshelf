@@ -102,7 +102,7 @@ function buttonMaker(classList) {
                 button.classList.add("btn-danger")
             } else if (classList === "edit") {
                 button.innerText = "Edit book"
-                button.setAttribute("onclick", "editBook(this.parentElement.children[0].innerText, this.parentElement.children[1], this.parentElement.children[2], this.parentElement.children[3])")
+                button.setAttribute("onclick", "editBook(this.parentElement.children[0].innerText, this.parentElement.children[1].innerText, this.parentElement.children[2].innerText, this.parentElement.children[3].innerText)")
                 button.classList.add("btn")
                 button.classList.add("btn-warning")
                 button.setAttribute("data-bs-toggle", "modal")
