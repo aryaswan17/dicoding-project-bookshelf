@@ -9,10 +9,10 @@ if (localStorage.getItem(languageKey) === null) {
 function loadLanguage() {
     switch (localStorage.getItem(languageKey)) {
         case "id":
-            window.location.replace("/dicoding-project-bookshelf/lang/id.html")
+            window.location.replace("/project-librarycard/lang/id.html")
             break;
         default:
-            window.location.replace("/dicoding-project-bookshelf/lang/en.html");
+            window.location.replace("/project-librarycard/lang/en.html");
     }
 }
 
